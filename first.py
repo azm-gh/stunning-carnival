@@ -72,4 +72,21 @@ user2 = User.from_full_name("Jane Smith")
 print(user1)
 print(user2)
 
-# single linked list
+
+
+def onetwo(s):
+    if not s:
+        return s  # Safe guard for empty strings
+        
+    s = list(s)
+    max_idx = len(s) - 1
+    
+    # Using // ensures we get an integer for the range
+    for i in range(len(s) // 2):
+        t = s[i]
+        s[i] = s[max_idx - i]
+        s[max_idx - i] = t
+        
+    return ''.join(s)
+
+print(onetwo("abcd"))  # Outputs: dcba
