@@ -25,7 +25,12 @@ def shuffle(nums: List[int], n: int) -> List[int]:
         res.append(nums[i+n])
     return res
 
-
+def shuffle(nums: List[int], n:int) -> List[int]:
+    res = []
+    for i in range(n):
+        res.append(nums[i])
+        res.append(nums[i+n])
+    return res
 
 def reverseString(s):
     if not s:
@@ -53,4 +58,33 @@ def reverseString2(a_string):
     return new_string
 
 
+# ELEMENTS vs INDICIES
+# If I want the ELEMENTS directly, I use singular noun:
+nums = [1,2,3]
+for num in nums:
+    if num == 1:
+        pass
 
+# If yu want INDEX POSITIONS, use i
+for i in range(len(nums)):
+    if nums[i] == 1:
+        pass 
+
+
+# Sum two numbers in the list based on target
+def twoSum(nums: List[int], target: int) -> list[int]:
+    for i in range(len(nums)):
+        # Inner loop checks every number AFTER the first number
+        for j in range(i + 1, len(nums)):
+            if nums[i] + nums[j] == target:
+                return [i,j]
+
+
+def twoSum1(nums: List[int], target: int) -> List[int]:
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            if nums[i] + nums[j] == target:
+                return[i,j]
+            
+
+twoSum1
